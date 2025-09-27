@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
   try {
     const data = JSON.parse(event.body);
 
-    const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbwXgzIfZZ9mOQxvsL2vrVVedkyWMLQtoX-OAQJhKm4ZQHWWz3dilOAzEFMxdeh0R0hA/exec'; // Replace with your Apps Script URL
+    const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbwxbreHDMj3fU81P2EjIJakQ6_biT6KSE4Yic62ata2qo9HYMqb1RoNMatUJUFwt0m2/exec'; // Replace with your Apps Script URL
     const params = new URLSearchParams(data).toString();
 
     // Forward request to Google Script
