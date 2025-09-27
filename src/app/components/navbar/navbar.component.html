@@ -1,0 +1,90 @@
+<mat-toolbar class="nav" [class.scrolled]="isScrolled" color="transparent">
+  <div class="left">
+    <img src="../../../assets/nav-header.jpg" alt="Lansum Encanto" class="nav-logo">
+    <span class="authorized-partner">Authorized Partner</span>
+  </div>
+
+  <div class="right">
+    <div class="hamburger-menu" (click)="toggleMobileNav()" *ngIf="isMobileView" [class.active]="isMobileNavOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" [class.show-menu]="isMenuOpen">
+      <a (click)="scrollToSection('overview'); closeMenu()">
+        <span class="nav-icon">
+          <i class="fas fa-home"></i>
+        </span>
+        Overview
+      </a>
+      <a (click)="scrollToSection('plans'); closeMenu()">
+        <span class="nav-icon">
+          <i class="fas fa-home"></i>
+        </span>
+        Plans
+      </a>
+      <a (click)="scrollToSection('amenities'); closeMenu()">
+        <span class="nav-icon">
+          <i class="fas fa-star"></i>
+        </span>
+        Amenities
+      </a>
+      <a (click)="scrollToSection('location'); closeMenu()">
+        <span class="nav-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </span>
+        Location
+      </a>
+    </div>
+    <button mat-flat-button color="accent" (click)="openLeadDialog()">Enquire Now</button>
+  </div>
+
+  <div class="mobile-nav" [class.show]="isMobileNavOpen">
+    <div class="mobile-nav-content">
+      <a (click)="scrollToSection('overview'); closeMobileNav()">
+        <span class="nav-icon">
+          <i class="fas fa-home"></i>
+        </span>
+        Overview
+      </a>
+      <a (click)="scrollToSection('plans'); closeMobileNav()">
+        <span class="nav-icon">
+          <i class="fas fa-home"></i>
+        </span>
+        Plans
+      </a>
+      <a (click)="scrollToSection('amenities'); closeMobileNav()">
+        <span class="nav-icon">
+          <i class="fas fa-star"></i>
+        </span>
+        Amenities
+      </a>
+      <a (click)="scrollToSection('location'); closeMobileNav()">
+        <span class="nav-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </span>
+        Location
+      </a>     
+    </div>
+  </div>
+</mat-toolbar>
+<div class="float-wrapper">
+  <a
+    href="#"
+    (click)="handleWhatsAppClick($event)"
+    class="whatsapp-float"
+    matTooltip="Chat with us on WhatsApp"
+    matTooltipPosition="left"
+  >
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <a
+    href="tel:+919000881133"
+    class="call-float"
+    matTooltip="Call us now"
+    matTooltipPosition="right"
+  >
+    <i class="bi bi-telephone-fill"></i>
+  </a>
+</div>

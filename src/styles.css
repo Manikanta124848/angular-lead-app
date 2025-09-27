@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  height: 100%; 
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body { 
+  margin: 0; 
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Dialog Styles */
+.visit-dialog {
+  margin-top: 70px !important;
+}
+
+.visit-dialog .mat-mdc-dialog-container {
+  padding: 0 !important;
+}
+
+.visit-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  margin-top: 0 !important;
+}
+
+.visit-dialog .mat-mdc-dialog-container .mdc-dialog__surface::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.visit-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+
+/* Dialog positioning */
+.cdk-overlay-pane.visit-dialog {
+  position: relative !important;
+  margin-top: 70px !important;
+}
+
+.cdk-global-overlay-wrapper {
+  align-items: flex-start !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .visit-dialog {
+    margin-top: 60px !important;
+  }
+  
+  .cdk-overlay-pane.visit-dialog {
+    margin-top: 60px !important;
+  }
+}

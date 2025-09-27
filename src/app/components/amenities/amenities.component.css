@@ -1,0 +1,232 @@
+.amenities {
+  padding: 5rem 0;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #333;
+  margin-bottom: 4rem;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.amenities-cta {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.amenities-cta p {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.brochure-btn {
+  background-color: #C5B69E !important;
+  color: white !important;
+  padding: 1rem 2rem !important;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* ---- */
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 0 auto 4rem;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.highlight-item {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(197, 182, 158, 0.1);
+}
+
+.highlight-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, #C5B69E, #E8DFD3);
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left;
+}
+
+.highlight-item:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(197, 182, 158, 0.15);
+  border-color: rgba(197, 182, 158, 0.2);
+}
+
+.highlight-item:hover::before {
+  transform: scaleX(1);
+}
+
+.highlight-icon {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.highlight-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px dashed rgba(197, 182, 158, 0.3);
+  animation: rotate 30s linear infinite;
+}
+
+.highlight-icon::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  border: 2px solid rgba(197, 182, 158, 0.15);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.highlight-icon img {
+  position: absolute;
+  inset: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  object-fit: cover;
+  border-radius: 50%;
+  filter: brightness(0.95);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.highlight-item:hover .highlight-icon {
+  transform: scale(1.02);
+}
+
+.highlight-item:hover .highlight-icon::before {
+  border-color: rgba(197, 182, 158, 0.5);
+}
+
+.highlight-item:hover .highlight-icon img {
+  filter: brightness(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(197, 182, 158, 0.2);
+}
+
+.highlight-item h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.highlight-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #C5B69E, #E8DFD3);
+}
+
+.highlight-item p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover p {
+  color: #333;
+}
+
+@media (max-width: 1200px) {
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 2rem;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .highlight-item {
+    padding: 1.5rem;
+  }
+
+  .highlight-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight-icon::before {
+    inset: 0;
+  }
+
+  .highlight-icon::after {
+    inset: 2px;
+  }
+
+  .highlight-icon img {
+    inset: 4px;
+  }
+
+  .highlight-item h3 {
+    font-size: 18px;
+    margin-bottom: 0.75rem;
+  }
+
+  .highlight-item p {
+    font-size: 14px;
+  }
+}

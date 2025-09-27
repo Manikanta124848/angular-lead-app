@@ -1,0 +1,10 @@
+:root{
+  --accent: #c6993d;
+  --text: #222;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+main { background: #fff; }

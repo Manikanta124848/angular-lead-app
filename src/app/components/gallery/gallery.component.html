@@ -1,0 +1,43 @@
+<div class="gallery-container">
+  <div class="gallery-heading">
+    <h2 class="gallery-title">Project Gallery</h2>
+    <p class="gallery-subtitle">Experience Luxury Living Through Our Lens</p>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-wrapper">
+      <ng-container *ngFor="let item of galleryItems; let i = index">
+        <img [src]="item.url"
+             class="gallery-image"
+             [class.active]="i === currentIndex"
+             [class.previous]="i === getPreviousIndex()"
+             [class.next]="i === getNextIndex()"
+             [alt]="item.title"
+             (error)="handleImageError($event)">
+      </ng-container>
+      
+      <!-- Navigation Buttons -->
+      <button class="gallery-btn prev" (click)="previousImage()">
+        <span>&#10094;</span>
+      </button>
+      <button class="gallery-btn next" (click)="nextImage()">
+        <span>&#10095;</span>
+      </button>
+
+      <!-- Image Information -->
+      <div class="image-info">
+        <h3 class="image-title">{{galleryItems[currentIndex].title}}</h3>
+        <p class="image-description">{{galleryItems[currentIndex].description}}</p>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="gallery-nav">
+        <div *ngFor="let item of galleryItems; let i = index" 
+             class="gallery-dot" 
+             [class.active]="i === currentIndex"
+             (click)="goToImage(i)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
