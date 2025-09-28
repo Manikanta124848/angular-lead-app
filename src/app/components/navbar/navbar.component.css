@@ -327,12 +327,19 @@
 
 /* Mobile Navigation */
 .hamburger-menu {
+  display: none; /* Default state */
   flex-direction: column;
   justify-content: space-between;
   width: 24px;
   height: 20px;
   cursor: pointer;
   z-index: 1200;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex !important; /* Force display on mobile */
+  }
 }
 
 .hamburger-menu span {

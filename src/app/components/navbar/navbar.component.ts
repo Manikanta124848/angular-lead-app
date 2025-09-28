@@ -80,7 +80,7 @@ export class NavbarComponent {
       // Small delay to ensure menu is closed
       setTimeout(() => {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
+      }, 300);
     }
   }
 
