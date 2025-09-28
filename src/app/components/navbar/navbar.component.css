@@ -5,19 +5,144 @@
   right: 0;
   z-index: 1100;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1.2rem 4rem;
+  padding: 1rem 2rem;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
   backdrop-filter: blur(12px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .nav.scrolled {
   background: rgba(0, 0, 0, 0.92);
-  padding: 1rem 4rem;
+  padding: 0.8rem 2rem;
   border-bottom: 1px solid rgba(197, 182, 158, 0.1);
+}
+
+/* Specific handling for 800-1200px */
+@media (min-width: 800px) and (max-width: 1200px) {
+  .nav {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .right {
+    gap: 1rem;
+  }
+
+  .nav-logo {
+    height: 36px;
+  }
+
+  .right button {
+    padding: 0.5rem 1.2rem !important;
+    font-size: 12px !important;
+    height: 34px !important;
+    min-width: 110px !important;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    margin-left: 0.75rem;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 1200px) {
+  .nav {
+    padding: 1rem 4rem;
+  }
+  
+  .nav.scrolled {
+    padding: 0.8rem 4rem;
+  }
+
+  .nav-logo {
+    height: 48px;
+  }
+
+  .right {
+    gap: 3rem;
+  }
+
+  .right button {
+    padding: 0.7rem 2rem !important;
+    font-size: 14px !important;
+    height: 40px !important;
+    min-width: 140px !important;
+  }
+}
+
+/* Medium-large screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav {
+    padding: 1rem 3rem;
+  }
+
+  .nav.scrolled {
+    padding: 0.8rem 3rem;
+  }
+
+  .nav-logo {
+    height: 44px;
+  }
+
+  .right {
+    gap: 2.5rem;
+  }
+
+  .right button {
+    padding: 0.6rem 1.8rem !important;
+    font-size: 13px !important;
+    height: 38px !important;
+    min-width: 130px !important;
+  }
+}
+
+/* Medium to Large screens */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav.scrolled {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .nav-logo {
+    height: 38px;
+  }
+
+  .right {
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    margin-left: 1rem;
+  }
+
+  .right button {
+    padding: 0.6rem 1.5rem !important;
+    font-size: 13px !important;
+    height: 36px !important;
+    min-width: 120px !important;
+  }
+/* 
+  .authorized-partner {
+    display: none;
+  } */
 }
 
 .nav-logo {
@@ -39,23 +164,32 @@
 
 .authorized-partner {
   color: #C5B69E;
-  font-size: 13px;
+  font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 400;
   padding-left: 1rem;
   border-left: 1px solid rgba(197, 182, 158, 0.3);
+  display: none;
 }
+
+/* @media (min-width: 992px) {
+  .authorized-partner {
+    display: block;
+  }
+} */
 
 .right {
   display: flex;
-  gap: 3.5rem;
+  /* gap: 2rem; */
   align-items: center;
+  margin-left: auto;
+  min-width: auto;
 }
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  /* gap: 3rem; */
   align-items: center;
 }
 
@@ -73,7 +207,7 @@
   padding: 0.5rem 0;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  /* gap: 0.75rem; */
 }
 
 .nav-icon {
@@ -121,22 +255,27 @@
 }
 
   .right button {
-  background: #d4b056 !important; /* Golden color */
-  color: #ffffff !important;
-  padding: 0.8rem 2.5rem !important;
-  border-radius: 50px !important;
-  font-size: 14px !important;
-  letter-spacing: 2px !important;
-  font-weight: 600 !important;
+  background: #d4b056 ;
+  color: #ffffff ;
+  padding: 0.6rem 1.5rem ;
+  border-radius: 50px ;
+  font-size: 13px ;
+  letter-spacing: 1px ;
+  font-weight: 600 ;
   text-transform: uppercase;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) ;
   position: relative;
   overflow: hidden;
-  border: none !important;
+  border: none ;
   box-shadow: 0 4px 15px rgba(212, 176, 86, 0.3);
   animation: gentlePulse 2s infinite;
-  min-width: auto !important;
+  min-width: auto ;
   white-space: nowrap;
+  height: 36px ;
+  line-height: 1 ;
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
 }@keyframes gentlePulse {
   0% {
     transform: scale(1);
@@ -153,8 +292,8 @@
 }
 
 .right button:hover {
-  background: #c09c47 !important; /* Darker golden color */
-  color: white !important;
+  background: #c09c47 ; /* Darker golden color */
+  color: white ;
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(212, 176, 86, 0.4);
   animation: none;
@@ -272,21 +411,21 @@
 
 @media (max-width: 768px) {
   .nav {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1rem;
   }
   
   .right {
-    gap: 1.2rem;
+    gap: 0.75rem;
+    margin-left: auto;
   }
   
   .nav-logo {
     height: 36px;
   }
 
-  .authorized-partner {
-    font-size: 11px;
-    padding-left: 0.75rem;
-  }
+  /* .authorized-partner {
+    display: none;
+  } */
 
   .nav-links {
     display: none;
@@ -294,6 +433,7 @@
   
   .hamburger-menu {
     display: flex;
+    margin-left: 0.75rem;
   }
   
   .right button {
@@ -302,6 +442,7 @@
     letter-spacing: 1px !important;
     white-space: nowrap;
     min-width: auto !important;
+    height: 32px !important;
   }
 
   .mobile-nav-content a {
@@ -510,31 +651,73 @@
 
 @media (max-width: 480px) {
   .nav {
-    padding: 0.7rem 1rem;
+    padding: 0.6rem 0.75rem;
   }
 
   .right {
-    gap: 1rem;
+    gap: 0.5rem;
+    margin-left: auto;
   }
 
   .nav-logo {
-    height: 32px;
+    height: 30px;
   }
 
-  .authorized-partner {
-    font-size: 10px;
-    padding-left: 0.5rem;
+  /* .authorized-partner {
+    display: none;
+  } */
+
+  .right button {
+    padding: 0 0.75rem !important;
+    font-size: 11px !important;
+    height: 30px !important;
+    min-width: 80px !important;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 360px) {
+  .nav {
+    padding: 0.5rem 0.5rem;
   }
 
-  .right a {
-    font-size: 11px;
-    letter-spacing: 0.5px;
+  .nav-logo {
+    height: 28px;
   }
 
   .right button {
-    padding: 0.4rem 1rem !important;
-    font-size: 11px !important;
+    font-size: 10px !important;
+    padding: 0 0.6rem !important;
+    height: 28px !important;
+    min-width: 70px !important;
   }
+}
+
+/* Medium mobile devices */
+@media (min-width: 361px) and (max-width: 400px) {
+  .nav {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .right button {
+    padding: 0 0.75rem !important;
+    font-size: 10px !important;
+    height: 30px !important;
+  }
+}
+
+/* Perfect for 430px width */
+@media (width: 430px) {
+  .nav {
+    padding: 0.7rem 1rem;
+  }
+
+  .right button {
+    padding: 0 1rem !important;
+    font-size: 11px !important;
+    height: 32px !important;
+  }
+}
 
   .whatsapp-float {
     width: 50px;
@@ -546,4 +729,4 @@
   .whatsapp-float .bi-whatsapp {
     font-size: 30px;
   }
-}
+

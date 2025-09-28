@@ -14,27 +14,6 @@
   margin-top: 0;
 }
 
-:host ::ng-deep .mat-datepicker-content {
-  z-index: 1001 !important;
-}
-
-:host ::ng-deep .mat-calendar {
-  z-index: 1001 !important;
-}
-
-:host ::ng-deep .mat-datepicker-toggle {
-  z-index: 2;
-}
-
-:host ::ng-deep .mat-calendar-body-cell-content {
-  pointer-events: auto !important;
-}
-
-:host ::ng-deep .mat-datepicker-popup {
-  position: relative;
-  z-index: 1001 !important;
-}
-
 :host ::ng-deep .mat-mdc-dialog-container {
   margin-top: 0 !important;
 }
@@ -132,46 +111,6 @@ mat-form-field {
   border-width: 2px !important;
 }
 
-:host ::ng-deep .mat-datepicker-toggle {
-  color: #d6c8a4;
-}
-
-:host ::ng-deep .mat-datepicker-toggle:hover {
-  color: #b89a5d;
-}
-
-:host ::ng-deep .mat-calendar {
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-:host ::ng-deep .mat-calendar-body-selected {
-  background-color: #d6c8a4 !important;
-  color: white !important;
-}
-
-:host ::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected) {
-  border-color: #d6c8a4;
-}
-
-:host ::ng-deep .mat-calendar-header {
-  background-color: #f8f8f8;
-  padding: 0.5rem;
-}
-
-:host ::ng-deep .mat-calendar-controls {
-  margin: 0 !important;
-}
-
-:host ::ng-deep .mat-calendar-arrow {
-  fill: #d6c8a4;
-}
-
-:host ::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
-  background-color: rgba(214, 200, 164, 0.3);
-}
 
 .message-field {
   width: 100%;
@@ -181,8 +120,9 @@ mat-form-field {
   background-color: #d6c8a4 !important;
   color: white !important;
   width: 100%;
-  padding: clamp(0.8rem, 2vw, 1rem) !important;
-  font-size: clamp(14px, 2vw, 16px);
+  min-height: 48px;
+  padding: 12px 24px !important;
+  font-size: 16px;
   letter-spacing: 1px;
   border: none;
   border-radius: 4px;
@@ -190,6 +130,7 @@ mat-form-field {
   text-transform: uppercase;
   font-weight: 500;
   transition: all 0.3s ease !important;
+  display: block;
 }
 
 .submit-button:disabled {
@@ -228,31 +169,40 @@ mat-form-field {
 
 @media (max-width: 480px) {
   .dialog-container {
-    padding: 1rem;
-    margin: 0;
-    border-radius: 0;
-    height: 100vh;
-    max-height: none;
+    padding: 1.25rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
   .form-row {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   mat-form-field {
     flex: none;
+    margin-bottom: 0.5rem;
   }
 
   .dialog-title {
     font-size: 20px;
+    margin-bottom: 1rem;
   }
 
   .submit-button {
-    position: sticky;
-    bottom: 0;
-    margin: 1rem -1rem -1rem;
-    border-radius: 0;
+    width: 100%;
+    margin: 1.5rem 0 0.5rem;
+    border-radius: 4px;
+    display: block;
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .close-button {
+    right: -0.5rem;
+    top: -0.5rem;
   }
 }
 
